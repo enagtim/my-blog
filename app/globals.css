@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 :root {
     --c-primary: #1473E6;
     --c-black-20: #6E6E6E;
@@ -5,4 +8,7 @@
     --c-black-30: #4B4B4B;
     --c-border: #F5F5F5;
     --c-white: #FFFFFF;
+}
+body {
+    margin: 0;
 }

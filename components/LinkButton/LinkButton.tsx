@@ -6,7 +6,13 @@ export default function LinkButton() {
 	return (
 		<Link href={'#'} className={styles.link}>
 			Читать
-			<img alt="Икона стрелка" src="/arrow-icon.svg" />
+			<Image
+				className={styles.img}
+				width={20}
+				height={20}
+				alt="Икона стрелка"
+				src="/arrow-icon.svg"
+			/>
 		</Link>
 	);
 }

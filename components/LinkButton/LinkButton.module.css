@@ -1,12 +1,17 @@
 .link {
     display: flex;
     position: relative;
-    padding: 2px 20px 2px 15px;
+    padding: 2px 20px 2px 5px;
     justify-content: center;
     align-items: center;
-    font-size: normal;
+    font-size: 12;
     font-weight: normal;
     line-height: normal;
     text-decoration: none;
     color: var(--c-primary);
+}
+.img {
+    position: absolute;
+    top: 1;
+    right: 0;
 }

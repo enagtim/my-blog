@@ -5,7 +5,7 @@ export default function Like({ count }: { count: number }) {
 	return (
 		<div className={styles.container}>
 			{count}
-			<img src="/like.svg" alt="Иконка лайка" />
+			<Image width={16} height={16} src="/like.svg" alt="Иконка лайка" />
 		</div>
 	);
 }
