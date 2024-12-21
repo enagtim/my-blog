@@ -8,9 +8,11 @@
     --c-black-30: #4B4B4B;
     --c-border: #F5F5F5;
     --c-white: #FFFFFF;
+    --color-black-icon: #303030; 
 }
 body {
-    margin: 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 button {
     background: none;

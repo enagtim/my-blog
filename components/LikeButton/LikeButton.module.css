@@ -9,12 +9,12 @@
     cursor: pointer;
 }
 .button svg path {
-    stroke: #303030;
+    stroke: var(--color-black-icon);
 }
 .button_active {
-    background-color: #303030;
+    background-color: var(--color-black-icon);
     border: none;
 }
 .button_active svg path {
-    stroke: #FFFFFF;
+    stroke: var(--c-white);
 }
