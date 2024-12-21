@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { IPostCardProps } from './PostCard.interface';
 import styles from './PostCard.module.css';
 import LinkButton from '../LinkButton/LinkButton';
-import Like from '../Like/Like';
+import Like from '../LikeIcon/LikeIcon';
 
 function getPluralForm(number: number, singular: string, few: string, many: string): string {
 	const Number = number % 100;

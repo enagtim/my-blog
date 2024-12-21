@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from './Like.module.css';
+import styles from './LikeIcon.module.css';
 
 export default function Like({ count }: { count: number }) {
 	return (
