@@ -1,6 +1,7 @@
-import './globals.css';
+import Link from 'next/link';
+import Image from 'next/image';
+import './index.css';
 import { Open_Sans } from 'next/font/google';
-import PostPage from './page';
 
 const open_sans = Open_Sans({
 	subsets: ['cyrillic'],
@@ -12,12 +13,26 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="ru">
+		<html lang="en">
 			<head>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<title>my_blog</title>
 			</head>
-			<body className={open_sans.className}>{children}</body>
+			<body className={open_sans.className}>
+				<header className="header">
+					<nav>
+						<nav className="navigation">
+							<Link href={'/'} className="title">
+								.my_blog
+							</Link>
+							<Link href={'https://github.com/enagtim'}>
+								<Image src="/github.svg" alt="Иконка гитхаба" height={48} width={48} />
+							</Link>
+						</nav>
+					</nav>
+				</header>
+				{children}
+			</body>
 		</html>
 	);
 }
