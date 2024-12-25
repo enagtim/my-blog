@@ -1,4 +1,4 @@
-.grid_cards{
+.cards_post{
     display: grid;
     column-gap: 33px;
     grid-template-columns: repeat(auto-fit, minmax(318px, 1fr));

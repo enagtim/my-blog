@@ -1,11 +1,13 @@
 import Image from 'next/image';
-import { IPostCard } from './PostCard.interface';
 import styles from './PostCard.module.css';
 import LinkButton from '../../shared/ui/LinkButton/LinkButton';
 import Like from '../../shared/ui/LikeIcon/LikeIcon';
-import { GetPluralForm } from '@/app/features/getPluralForm';
+import { GetPluralForm } from '@/app/helpers/getPluralForm';
+import { IPostCard } from '@/app/interfaces/post.card.interface';
 
-export default function PostCard({ ...props }: IPostCard) {
+export default function PostCard({
+	...props
+}: IPostCard & { publication: number; timeRead: number }) {
 	return (
 		<div className={styles.container}>
 			<div className={styles.container_img}>
@@ -14,16 +16,16 @@ export default function PostCard({ ...props }: IPostCard) {
 			<div className={styles.text_content}>
 				<div className={styles.text_content_header}>
 					<div className={styles.tags}>
-						<div className={styles.tags_title}>{props.tag}</div>
+						<div className={styles.tags_title}>{props.tags[0]}</div>
 						<Image width={5} height={5} alt="Разделитель" src="/ellipse.svg" />
 						<div className={styles.tags_created}>
 							{`${props.publication} ${GetPluralForm(props.publication, 'месяц', 'месяца', 'месяцев')} назад`}
 						</div>
 					</div>
-					<Like count={props.like} />
+					<Like count={props.reactions.likes} />
 				</div>
 				<div className={styles.text_content_title}>{props.title}</div>
-				<div className={styles.text_content_description}>{props.description}</div>
+				<div className={styles.text_content_description}>{props.body}</div>
 			</div>
 			<div className={styles.footer}>
 				<div
