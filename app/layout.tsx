@@ -20,15 +20,13 @@ export default function RootLayout({
 			</head>
 			<body className={open_sans.className}>
 				<header className="header">
-					<nav>
-						<nav className="navigation">
-							<Link href={'/'} className="title">
-								.my_blog
-							</Link>
-							<Link href={'https://github.com/enagtim'}>
-								<Image src="/github.svg" alt="Иконка гитхаба" height={48} width={48} />
-							</Link>
-						</nav>
+					<nav className="navigation">
+						<Link href={'/'} className="title">
+							.my_blog
+						</Link>
+						<Link href={'https://github.com/enagtim'}>
+							<Image src="/github.svg" alt="Иконка гитхаба" height={48} width={48} />
+						</Link>
 					</nav>
 				</header>
 				{children}

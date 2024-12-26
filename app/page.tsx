@@ -1,8 +1,9 @@
-import PostCard from './entity/PostCard/PostCard';
-import { IPostCard, IPosts } from './interfaces/post.card.interface';
+import { JSX } from 'react';
+import PostCard from '../entity/PostCard/PostCard';
+import { IPostCard, IPosts } from '../interfaces/post.card.interface';
 import styles from './page.module.css';
 
-export default async function PostPage() {
+export default async function PostPage(): Promise<JSX.Element> {
 	try {
 		const res = await fetch('https://dummyjson.com/posts?limit=3', {
 			cache: 'force-cache',
