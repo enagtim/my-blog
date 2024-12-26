@@ -1,5 +1,5 @@
 'use client';
-import { useGitHub } from '@/context/GitHub.context';
+import { useGitHub } from '@/src/context/GitHub.context';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './header.layout.module.css';

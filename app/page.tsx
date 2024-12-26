@@ -1,8 +1,8 @@
 import { JSX } from 'react';
-import PostCard from '../entity/PostCard/PostCard';
-import { IPostCard } from '../interfaces/post.card.interface';
+import PostCard from '../src/entity/PostCard/PostCard';
+import { IPostCard } from '../src/interfaces/post.card.interface';
 import styles from './page.module.css';
-import { getPosts } from '@/api/getPosts';
+import { getPosts } from '@/src/api/getPosts';
 
 export default async function PostPage(): Promise<JSX.Element> {
 	try {

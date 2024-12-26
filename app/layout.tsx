@@ -1,7 +1,7 @@
 import './index.css';
 import { Open_Sans } from 'next/font/google';
-import { GitHubProvider } from '../context/GitHub.context';
-import Header from '@/widgets/header.layout';
+import { GitHubProvider } from '../src/context/GitHub.context';
+import Header from '@/src/widgets/header.layout';
 
 const open_sans = Open_Sans({
 	subsets: ['cyrillic'],

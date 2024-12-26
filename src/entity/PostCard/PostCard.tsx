@@ -2,8 +2,8 @@ import Image from 'next/image';
 import styles from './PostCard.module.css';
 import LinkButton from '../../shared/ui/LinkButton/LinkButton';
 import Like from '../../shared/ui/LikeIcon/LikeIcon';
-import { GetPluralForm } from '@/helpers/getPluralForm';
-import { IPostCard } from '@/interfaces/post.card.interface';
+import { GetPluralForm } from '@/src/helpers/getPluralForm';
+import { IPostCard } from '@/src/interfaces/post.card.interface';
 
 export default function PostCard({ ...props }: IPostCard & { timeRead: number }) {
 	return (

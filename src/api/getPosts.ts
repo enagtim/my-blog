@@ -1,4 +1,4 @@
-import { IPosts } from '@/interfaces/post.card.interface';
+import { IPosts } from '@/src/interfaces/post.card.interface';
 
 export async function getPosts(): Promise<IPosts> {
 	const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/posts?limit=6`, {
