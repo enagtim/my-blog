@@ -28,7 +28,7 @@ export default function PostCard({ ...props }: IPostCard & { timeRead: number })
 			<div className={styles.footer}>
 				<div
 					className={styles.time_read}
-				>{`${props.timeRead} ${GetPluralForm(props.timeRead, 'минута', 'минуты', 'минут')}`}</div>
+				>{`${props.timeRead} ${GetPluralForm(props.timeRead, 'minute', 'minutes', 'minutes')}`}</div>
 				<LinkButton />
 			</div>
 		</div>

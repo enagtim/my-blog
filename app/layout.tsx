@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import './index.css';
 import { Open_Sans } from 'next/font/google';
+import { GitHubProvider } from '../context/GitHub.context';
+import Header from '@/widgets/header.layout';
 
 const open_sans = Open_Sans({
 	subsets: ['cyrillic'],
@@ -19,17 +19,9 @@ export default function RootLayout({
 				<title>my_blog</title>
 			</head>
 			<body className={open_sans.className}>
-				<header className="header">
-					<nav className="navigation">
-						<Link href={'/'} className="title">
-							.my_blog
-						</Link>
-						<Link href={'https://github.com/enagtim'}>
-							<Image src="/github.svg" alt="Иконка гитхаба" height={48} width={48} />
-						</Link>
-					</nav>
-				</header>
-				{children}
+				<GitHubProvider>
+					<Header children={children} />
+				</GitHubProvider>
 			</body>
 		</html>
 	);
