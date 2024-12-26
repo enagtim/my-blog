@@ -1,17 +1,12 @@
 import { JSX } from 'react';
 import PostCard from '../entity/PostCard/PostCard';
-import { IPostCard, IPosts } from '../interfaces/post.card.interface';
+import { IPostCard } from '../interfaces/post.card.interface';
 import styles from './page.module.css';
+import { getPosts } from '@/api/getPosts';
 
 export default async function PostPage(): Promise<JSX.Element> {
 	try {
-		const res = await fetch('https://dummyjson.com/posts?limit=3', {
-			cache: 'force-cache',
-		});
-		if (!res.ok) {
-			throw new Error('Failed to fetch posts');
-		}
-		const { posts }: IPosts = await res.json();
+		const { posts } = await getPosts();
 		return (
 			<main>
 				<section className={styles.cards_post}>
@@ -23,8 +18,7 @@ export default async function PostPage(): Promise<JSX.Element> {
 							body={post.body}
 							tags={post.tags}
 							reactions={post.reactions}
-							publication={1}
-							timeRead={1}
+							timeRead={5}
 						/>
 					))}
 				</section>

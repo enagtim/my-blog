@@ -5,9 +5,7 @@ import Like from '../../shared/ui/LikeIcon/LikeIcon';
 import { GetPluralForm } from '@/helpers/getPluralForm';
 import { IPostCard } from '@/interfaces/post.card.interface';
 
-export default function PostCard({
-	...props
-}: IPostCard & { publication: number; timeRead: number }) {
+export default function PostCard({ ...props }: IPostCard & { timeRead: number }) {
 	return (
 		<div className={styles.container}>
 			<div className={styles.container_img}>
@@ -18,9 +16,9 @@ export default function PostCard({
 					<div className={styles.tags}>
 						<div className={styles.tags_title}>{props.tags[0]}</div>
 						<Image width={5} height={5} alt="Разделитель" src="/ellipse.svg" />
-						<div className={styles.tags_created}>
-							{`${props.publication} ${GetPluralForm(props.publication, 'месяц', 'месяца', 'месяцев')} назад`}
-						</div>
+						<div className={styles.tags_title}>{props.tags[1]}</div>
+						<Image width={5} height={5} alt="Разделитель" src="/ellipse.svg" />
+						<div className={styles.tags_title}>{props.tags[2]}</div>
 					</div>
 					<Like count={props.reactions.likes} />
 				</div>

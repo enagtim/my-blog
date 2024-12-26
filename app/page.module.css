@@ -1,5 +1,7 @@
 .cards_post{
     display: grid;
+    row-gap: 33px;
     column-gap: 33px;
     grid-template-columns: repeat(auto-fit, minmax(318px, 1fr));
+    margin-bottom: 40px;
 }
