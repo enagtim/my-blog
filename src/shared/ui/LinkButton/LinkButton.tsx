@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function LinkButton() {
 	return (
 		<Link href={'#'} className={styles.link}>
-			Читать
+			Read
 			<Image
 				className={styles.img}
 				width={20}
