@@ -2,11 +2,11 @@ import { JSX } from 'react';
 import PostCard from '../src/entity/PostCard/PostCard';
 import { IPostCard } from '../src/interfaces/post.card.interface';
 import styles from './page.module.css';
-import { getPosts } from '@/src/api/getPosts';
+import { getAllPosts } from '@/src/api/getAllPosts';
 
-export default async function PostPage(): Promise<JSX.Element> {
+export default async function PostPage() {
 	try {
-		const { posts } = await getPosts();
+		const { posts } = await getAllPosts();
 		return (
 			<main>
 				<section className={styles.cards_post}>
@@ -19,6 +19,7 @@ export default async function PostPage(): Promise<JSX.Element> {
 							tags={post.tags}
 							reactions={post.reactions}
 							timeRead={5}
+							href={`/posts/${post.id}`}
 						/>
 					))}
 				</section>

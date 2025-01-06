@@ -1,6 +1,6 @@
 import { IPosts } from '@/src/interfaces/post.card.interface';
 
-export async function getPosts(): Promise<IPosts> {
+export async function getAllPosts(): Promise<IPosts> {
 	const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/posts?limit=6`, {
 		cache: 'force-cache',
 	});

@@ -2,9 +2,9 @@ import Image from 'next/image';
 import styles from './LinkButton.module.css';
 import Link from 'next/link';
 
-export default function LinkButton() {
+export default function LinkButton({ href }: { href: string }) {
 	return (
-		<Link href={'#'} className={styles.link}>
+		<Link href={href} className={styles.link}>
 			Read
 			<Image
 				className={styles.img}

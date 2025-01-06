@@ -5,7 +5,7 @@ import Like from '../../shared/ui/LikeIcon/LikeIcon';
 import { GetPluralForm } from '@/src/helpers/getPluralForm';
 import { IPostCard } from '@/src/interfaces/post.card.interface';
 
-export default function PostCard({ ...props }: IPostCard & { timeRead: number }) {
+export default function PostCard({ ...props }: IPostCard & { timeRead: number; href: string }) {
 	return (
 		<div className={styles.container}>
 			<div className={styles.container_img}>
@@ -29,7 +29,7 @@ export default function PostCard({ ...props }: IPostCard & { timeRead: number })
 				<div
 					className={styles.time_read}
 				>{`${props.timeRead} ${GetPluralForm(props.timeRead, 'minute', 'minutes', 'minutes')}`}</div>
-				<LinkButton />
+				<LinkButton href={props.href} />
 			</div>
 		</div>
 	);
