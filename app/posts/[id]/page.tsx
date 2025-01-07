@@ -5,8 +5,10 @@ import Image from 'next/image';
 import Like from '@/src/shared/ui/LikeIcon/LikeIcon';
 import LikeButton from '@/src/shared/ui/LikeButton/LikeButton';
 import { getCommentsByPostId } from '@/src/api/comments/getCommentsByPostId';
-import { IComment, IUser } from '@/src/interfaces/comment.interface';
+import { IComment } from '@/src/interfaces/comment.interface';
 import UserComment from '@/src/entity/UserComment/UserComment';
+import Form from '@/src/entity/Form/Form';
+
 export default async function PostPage({ params }: { params: { id: string } }) {
 	const post = await getPostById(params.id);
 	const comments = await getCommentsByPostId(params.id);
@@ -50,6 +52,7 @@ export default async function PostPage({ params }: { params: { id: string } }) {
 					/>
 				))}
 			</section>
+			<Form postId={params.id} userId={190} />
 		</main>
 	);
 }
