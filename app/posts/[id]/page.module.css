@@ -41,6 +41,7 @@
     flex-direction: column;
     align-content: start;
     gap: 24px;
+    margin-bottom: 24px;
 }
 .comment_title {
     color: var(--c-black);
@@ -48,5 +49,4 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-bottom: 24px;
 }

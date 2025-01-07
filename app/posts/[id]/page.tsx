@@ -1,12 +1,19 @@
-import { getPostById } from '@/src/api/getPostById';
+import { getPostById } from '@/src/api/posts/getPostById';
 import { notFound } from 'next/navigation';
 import styles from './page.module.css';
 import Image from 'next/image';
 import Like from '@/src/shared/ui/LikeIcon/LikeIcon';
 import LikeButton from '@/src/shared/ui/LikeButton/LikeButton';
+import { getCommentsByPostId } from '@/src/api/comments/getCommentsByPostId';
+import { IComment, IUser } from '@/src/interfaces/comment.interface';
+import UserComment from '@/src/entity/UserComment/UserComment';
 export default async function PostPage({ params }: { params: { id: string } }) {
 	const post = await getPostById(params.id);
+	const comments = await getCommentsByPostId(params.id);
 	if (!post) {
+		notFound();
+	}
+	if (!comments) {
 		notFound();
 	}
 	return (
@@ -33,6 +40,15 @@ export default async function PostPage({ params }: { params: { id: string } }) {
 			</section>
 			<section className={styles.comments}>
 				<div className={styles.comment_title}>Comments</div>
+				{comments.map((comment: IComment) => (
+					<UserComment
+						key={comment.id}
+						id={comment.id}
+						username={comment.user.username}
+						fullName={comment.user.fullName}
+						body={comment.body}
+					/>
+				))}
 			</section>
 		</main>
 	);

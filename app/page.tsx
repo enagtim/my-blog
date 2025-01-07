@@ -2,7 +2,7 @@ import { JSX } from 'react';
 import PostCard from '../src/entity/PostCard/PostCard';
 import { IPostCard } from '../src/interfaces/post.card.interface';
 import styles from './page.module.css';
-import { getAllPosts } from '@/src/api/getAllPosts';
+import { getAllPosts } from '@/src/api/posts/getAllPosts';
 
 export default async function PostPage() {
 	try {
