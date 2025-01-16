@@ -1,19 +1,7 @@
-.navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px;
-    margin-bottom: 30px;
-}
-.title {
-    color: #000;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-}
-.card {
+.cards_post{
     display: grid;
+    row-gap: 33px;
     column-gap: 33px;
     grid-template-columns: repeat(auto-fit, minmax(318px, 1fr));
+    margin-bottom: 40px;
 }

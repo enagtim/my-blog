@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import styles from './LikeButton.module.css';
 import cn from 'classnames';
-import LikeIcon from '..//../public/like-icon.16.svg';
+import LikeIcon from '..//..//..//../public/like-icon.16.svg';
 
 export default function LikeButton() {
 	const [isActiveButton, setIsActiveButton] = useState<boolean>(false);

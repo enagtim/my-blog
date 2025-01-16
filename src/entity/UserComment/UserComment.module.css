@@ -1,0 +1,32 @@
+.comment {
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+    gap: 7px;
+}
+.comment__user_data {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.user_fullname {
+    color: var(--c-black-30);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.user_username {
+    color: var(--c-black-20);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.comment__text {
+    color: var(--c-black-30);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}

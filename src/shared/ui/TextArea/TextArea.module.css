@@ -1,0 +1,14 @@
+.textarea {
+    border-radius: 8px;
+    border: 1px solid rgba(40, 40, 40, 0.16);
+    background: var(--c-white);
+    padding: 18px 29px 67px 29px;
+    color: var(--c-black);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
+.textarea::placeholder {
+    color: rgba(78, 93, 124, 0.50);
+}

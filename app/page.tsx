@@ -1,43 +1,37 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import { JSX } from 'react';
+import PostCard from '../src/entity/PostCard/PostCard';
+import { IPostCard } from '../src/interfaces/post.card.interface';
 import styles from './page.module.css';
-import PostCard from '@/components/PostCard/PostCard';
+import { getAllPosts } from '@/src/api/posts/getAllPosts';
 
-export default function PostPage() {
-	return (
-		<main>
-			<nav className={styles.navigation}>
-				<div className={styles.title}>.my_blog</div>
-				<Link href={'https://github.com/enagtim'}>
-					<Image src="/github.svg" alt="Иконка гитхаба" height={48} width={48} />
-				</Link>
-			</nav>
-			<section className={styles.card}>
-				<PostCard
-					tag="Front-end"
-					publication={1}
-					like={4}
-					title="Как работать с CSS Grid"
-					description="Грид-раскладка (CSS Grid Layout) представляет собой двумерную систему сеток в CSS. Гриды подойдут и для верстки основных областей страницы.."
-					timeRead={3}
-				/>
-				<PostCard
-					tag="Front-end"
-					publication={1}
-					like={4}
-					title="Как работать с CSS Grid"
-					description="Грид-раскладка (CSS Grid Layout) представляет собой двумерную систему сеток в CSS. Гриды подойдут и для верстки основных областей страницы.."
-					timeRead={3}
-				/>
-				<PostCard
-					tag="Front-end"
-					publication={1}
-					like={4}
-					title="Как работать с CSS Grid"
-					description="Грид-раскладка (CSS Grid Layout) представляет собой двумерную систему сеток в CSS. Гриды подойдут и для верстки основных областей страницы.."
-					timeRead={3}
-				/>
-			</section>
-		</main>
-	);
+export default async function PostPage() {
+	try {
+		const { posts } = await getAllPosts();
+		return (
+			<main>
+				<section className={styles.cards_post}>
+					{posts.map((post: IPostCard) => (
+						<PostCard
+							key={post.id}
+							id={post.id}
+							title={post.title}
+							body={post.body}
+							tags={post.tags}
+							reactions={post.reactions}
+							timeRead={5}
+							href={`/posts/${post.id}`}
+						/>
+					))}
+				</section>
+			</main>
+		);
+	} catch (e) {
+		return (
+			<main>
+				<section className={styles.cards_post}>
+					<p>Error loading posts. Please try again later.</p>
+				</section>
+			</main>
+		);
+	}
 }
