@@ -1,7 +1,7 @@
 export function GetPluralForm(number: number, singular: string, few: string, many: string): string {
-	const Number = number % 100;
-	const lastDigit = Number % 10;
-	if (Number > 10 && Number < 20) {
+	const getNumber = number % 100;
+	const lastDigit = getNumber % 10;
+	if (getNumber > 10 && getNumber < 20) {
 		return many;
 	}
 	if (lastDigit > 1 && lastDigit < 5) {

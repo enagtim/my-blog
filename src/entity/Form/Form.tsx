@@ -4,11 +4,8 @@ import Input from '@/src/shared/ui/Input/Input';
 import TextArea from '@/src/shared/ui/TextArea/TextArea';
 import styles from './Form.module.css';
 import { useForm } from 'react-hook-form';
+import { FormValues } from '@/src/interfaces/formValue.interface';
 
-interface FormValues {
-	username_input: string;
-	comment_textarea: string;
-}
 export default function Form({ postId, userId }: { postId: string; userId: number }) {
 	const {
 		register,
