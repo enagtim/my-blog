@@ -8,14 +8,13 @@ import { getCommentsByPostId } from '@/src/api/comments/getCommentsByPostId';
 import { IComment } from '@/src/interfaces/comment.interface';
 import UserComment from '@/src/entity/UserComment/UserComment';
 import Form from '@/src/entity/Form/Form';
+import { IPageParams } from '@/src/interfaces/page.params.interface';
 
-export default async function PostPage({ params }: { params: { id: string } }) {
-	const post = await getPostById(params.id);
-	const comments = await getCommentsByPostId(params.id);
-	if (!post) {
-		notFound();
-	}
-	if (!comments) {
+export default async function PostPage({ params }: { params: IPageParams }) {
+	const { id } = await params;
+	const post = await getPostById(id);
+	const comments = await getCommentsByPostId(id);
+	if (!post || !comments) {
 		notFound();
 	}
 	return (
@@ -52,7 +51,7 @@ export default async function PostPage({ params }: { params: { id: string } }) {
 					/>
 				))}
 			</section>
-			<Form postId={params.id} userId={190} />
+			<Form postId={id} userId={190} />
 		</main>
 	);
 }

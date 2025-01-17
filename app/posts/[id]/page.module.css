@@ -1,7 +1,7 @@
 .post_content {
     display: flex;
     flex-direction: column;
-    align-content: start;
+    align-content: flex-start;
     gap: 24px;
     margin-bottom: 24px;
 }
@@ -39,7 +39,7 @@
 .comments {
     display: flex;
     flex-direction: column;
-    align-content: start;
+    align-content: flex-start;
     gap: 24px;
     margin-bottom: 24px;
 }

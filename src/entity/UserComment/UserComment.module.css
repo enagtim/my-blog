@@ -1,7 +1,7 @@
 .comment {
     display: flex;
     flex-direction: column;
-    align-content: start;
+    align-content: flex-start;
     gap: 7px;
 }
 .comment__user_data {
