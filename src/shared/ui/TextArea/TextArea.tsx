@@ -5,7 +5,9 @@ export type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 	({ ...props }: TextAreaProps, ref) => {
-		return <textarea ref={ref} className={styles.textarea} {...props} />;
+		return (
+			<textarea aria-label="Text aria comment" ref={ref} className={styles.textarea} {...props} />
+		);
 	},
 );
 export default TextArea;

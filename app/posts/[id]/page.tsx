@@ -23,15 +23,15 @@ export default async function PostPage({ params }: { params: IPageParams }) {
 				<div className={styles.title}>{post.title}</div>
 				<div className={styles.tags}>
 					<div className={styles.tags_title}>{post.tags[0]}</div>
-					<Image width={5} height={5} alt="Разделитель" src="/ellipse.svg" />
+					<Image width={5} height={5} alt="Separator" src="/ellipse.svg" />
 					<div className={styles.tags_title}>{post.tags[1]}</div>
-					<Image width={5} height={5} alt="Разделитель" src="/ellipse.svg" />
+					<Image width={5} height={5} alt="Separator" src="/ellipse.svg" />
 					<div className={styles.tags_title}>{post.tags[2]}</div>
-					<Image width={5} height={5} alt="Разделитель" src="/ellipse.svg" />
+					<Image width={5} height={5} alt="Separator" src="/ellipse.svg" />
 					<Like count={post.reactions.likes} />
 				</div>
 				<div className={styles.img}>
-					<Image width={637} height={395} alt="Изображение карточки поста" src="/mini.png" />
+					<Image width={637} height={395} alt="Image post" src="/mini.png" />
 				</div>
 				<div className={styles.description}>{post.body}</div>
 				<div className={styles.like_container}>

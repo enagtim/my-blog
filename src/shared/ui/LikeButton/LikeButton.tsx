@@ -12,6 +12,7 @@ export default function LikeButton() {
 	};
 	return (
 		<button
+			aria-label="Click like post"
 			onClick={changeColorButton}
 			className={cn(styles.button, {
 				[styles.button_active]: isActiveButton,
