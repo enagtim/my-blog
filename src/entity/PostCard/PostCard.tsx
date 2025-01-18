@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 
 export function PostCard({ ...props }: IPostCard & { timeRead: number; href: string }) {
 	return (
-		<motion.div
+		<motion.articale
 			key={props.id}
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
@@ -17,15 +17,15 @@ export function PostCard({ ...props }: IPostCard & { timeRead: number; href: str
 		>
 			<div className={styles.container}>
 				<div className={styles.container_img}>
-					<Image width={300} height={192} alt="Изображение карточки поста" src="/mini.png" />
+					<Image width={300} height={192} alt="Post image" src="/mini.png" />
 				</div>
 				<div className={styles.text_content}>
 					<div className={styles.text_content_header}>
 						<div className={styles.tags}>
 							<div className={styles.tags_title}>{props.tags[0]}</div>
-							<Image width={5} height={5} alt="Разделитель" src="/ellipse.svg" />
+							<Image width={5} height={5} alt="Separatorr" src="/ellipse.svg" />
 							<div className={styles.tags_title}>{props.tags[1]}</div>
-							<Image width={5} height={5} alt="Разделитель" src="/ellipse.svg" />
+							<Image width={5} height={5} alt="Separator" src="/ellipse.svg" />
 							<div className={styles.tags_title}>{props.tags[2]}</div>
 						</div>
 						<Like count={props.reactions.likes} />
@@ -40,6 +40,6 @@ export function PostCard({ ...props }: IPostCard & { timeRead: number; href: str
 					<LinkButton href={props.href} />
 				</div>
 			</div>
-		</motion.div>
+		</motion.articale>
 	);
 }
